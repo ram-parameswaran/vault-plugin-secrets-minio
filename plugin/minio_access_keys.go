@@ -4,11 +4,11 @@ import (
     "context"
     "fmt"
 
-    "github.com/hashicorp/vault/logical"
-    "github.com/hashicorp/vault/logical/framework"
-    "github.com/hashicorp/vault/helper/base62"
+    "github.com/hashicorp/vault/sdk/logical"
+    "github.com/hashicorp/vault/sdk/framework"
+    "github.com/hashicorp/vault/sdk/helper/base62"
 
-    "github.com/minio/minio/pkg/madmin"
+    "github.com/minio/madmin-go"
 )
 
 const minioKeyType = "minio_access_key"
