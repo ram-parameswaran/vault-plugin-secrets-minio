@@ -66,12 +66,12 @@ func (b *backend) minioAccessKeyCreate(ctx context.Context, s logical.Storage,
 
     b.Logger().Info("Adding policy to minio user", "accessKeyId", accessKeyId,
 	"policy", policy)
-    err = client.SetUserPolicy(accessKeyId, policy)
-    if err != nil {
-	b.Logger().Error("Setting minio user policy failed", "accessKeyId", accessKeyId,
-	    "policy", policy, "error", err)
-	return nil, err
-    }
+    //err = client.SetUserPolicy(accessKeyId, policy)
+    //if err != nil {
+	//b.Logger().Error("Setting minio user policy failed", "accessKeyId", accessKeyId,
+	  //  "policy", policy, "error", err)
+	//return nil, err
+    //}
 
     // Gin up the madmin.UserInfo struct
     newUser := &madmin.UserInfo{
