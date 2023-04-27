@@ -57,7 +57,7 @@ func (b *backend) minioAccessKeyCreate(ctx context.Context, s logical.Storage,
 	return nil, err
     }
 
-    err = client.AddUser(accessKeyId, secretAccessKey)
+    err = client.AddUser(ctx,accessKeyId, secretAccessKey)
     if err != nil {
 	b.Logger().Error("Adding minio user failed", "accessKeyId", accessKeyId,
 	    "error", err)
@@ -105,7 +105,7 @@ func (b *backend) minioAccessKeyRevoke(ctx context.Context, req *logical.Request
 
     b.Logger().Info("Revoking access key", "accessKeyId", accessKeyId)
 
-    if err = client.RemoveUser(accessKeyId); err != nil {
+    if err = client.RemoveUser(ctx,accessKeyId); err != nil {
 	return nil, err
     }
 
