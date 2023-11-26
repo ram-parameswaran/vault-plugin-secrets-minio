@@ -1,3 +1,4 @@
 _workspace/
 vault-plugin-secrets-minio
 !cmd/vault-plugin-secrets-minio/
+.idea/
