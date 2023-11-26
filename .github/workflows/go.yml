@@ -25,26 +25,24 @@ jobs:
     name: release linux/amd64
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: wangyoucao577/go-release-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          goos: linux
-          goarch: amd64
-          overwrite: true
-          pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
-          release_name: main
+    - uses: actions/checkout@v3
+    - uses: wangyoucao577/go-release-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: linux
+        goarch: amd64
+        overwrite: true
+        pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
 
   release-linux-arm64:
     name: release linux/arm64
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: wangyoucao577/go-release-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          goos: linux
-          goarch: arm64
-          overwrite: true
-          pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
-          release_name: main
+    - uses: actions/checkout@v3
+    - uses: wangyoucao577/go-release-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: linux
+        goarch: arm64
+        overwrite: true
+        pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
