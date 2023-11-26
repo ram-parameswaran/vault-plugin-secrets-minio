@@ -33,6 +33,7 @@ jobs:
           goarch: amd64
           overwrite: true
           pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
+          release_tag: test
 
   release-linux-arm64:
     name: release linux/arm64
@@ -46,3 +47,4 @@ jobs:
           goarch: arm64
           overwrite: true
           pre_command: export CGO_ENABLED=0 && cd cmd/vault-plugin-secrets-minio
+          release_tag: test
